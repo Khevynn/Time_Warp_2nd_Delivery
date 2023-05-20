@@ -1,0 +1,160 @@
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --body-bg: #FFFFFF;
+    --body-color: #000000;
+    --form-color: white;
+    --input-color: #f2f2f2;
+    --browntext-color: #4a3623;
+    --redtext-color: darkred;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: #181a1b;
+    --body-color: #FFFFFF;
+    --form-color: #181a1b;
+    --input-color: #1f2223;
+    --browntext-color: #8f7965;
+    --redtext-color: #8A3B3B;
+  }
+}
+
+body {
+  padding: 60px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--body-color);
+}
+
+/* Login or Register Message */
+p.warning {
+  color: var(--redtext-color);
+  font-size: larger;
+}
+
+/* Form */
+.form {
+  position: relative;
+  z-index: 1;
+  background: var(--form-color);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  padding: 45px;
+  text-align: center;
+  align-content: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Form Input */
+.form input {
+  outline: 0;
+  background: var(--input-color);
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: var(--body-color);
+}
+
+/* Not Registered Text */
+.form #message {
+  margin: 15px 0 0;
+  color: var(--body-color);
+  font-size: 14px;
+}
+
+/* Create an Account Text */
+.form #message a {
+  color: var(--browntext-color);
+  text-decoration: none;
+}
+
+/* Buttons */
+input.buttons {
+  background: #4a3623;
+  text-transform: uppercase;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+input.buttons:hover,
+input.buttons:active,
+input.buttons:focus {
+  background: #8f7965;
+}
+
+/* Small Buttons */
+input.smallbuttons {
+  text-transform: uppercase;
+  background: #4a3623;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 271px;
+}
+
+input.smallbuttons:hover,
+input.smallbuttons:active,
+input.smallbuttons:focus {
+  background: #8f7965;
+}
+
+/* Logout Button */
+input#logoutbutton {
+  text-transform: uppercase;
+  outline: 0;
+  background: #4a3623;
+  width: 100px;
+  margin-bottom: 0px;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+input#logoutbutton:hover,
+input#logoutbutton:active,
+input#logoutbutton:focus {
+  background: #8f7965;
+}
+
+/* Match History Menu CSS */
+#scores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#scores section {
+  width: 100%;
+  color: white;
+  margin: 5px 45px;
+  padding: 0px 0px;
+}
+
+#scores section.won {
+  background-color: #517253;
+}
+
+#scores section.lost {
+  background-color: #8B0000;
+}

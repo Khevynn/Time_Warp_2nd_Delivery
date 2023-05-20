@@ -1,0 +1,30 @@
+/* Match Select Menu CSS */
+#matches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#matches section {
+  background-color: #517253;
+  width: 100%;
+  color: white;
+  margin: 5px 45px;
+  padding: 0px 100px;
+  cursor: pointer;
+}
+
+#matches section:hover,
+#matches section:active,
+#matches section:focus {
+  background: #8f7965;
+}
+
+/* Refresh Button */
+#refreshbutton {
+  background-color: var(--body-bg);
+  height: 35px;
+  width: 35px;
+  padding: 0px;
+  position: center;
+}

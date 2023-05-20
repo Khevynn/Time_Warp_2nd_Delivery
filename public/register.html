@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Time Warp</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="./javascripts/requests/usersRequests.js"></script>
+  <script src="./javascripts/register.js"></script>
+</head>
+<body>
+  <center>
+    <header>
+      <img src="./assets/TimeWarpLogo.png" alt="TimeWarp" width="580" height="150">
+    </header>
+
+    <main>
+      <!-- Register Form -->
+      <div class="login-page">
+        <div class="form">
+          <h1 style="margin-top: 0px;">Register</h1>
+          <form action="javascript:register()">
+            <input type="text" autocomplete="username" id="name" placeholder="username" />
+            <input type="password" autocomplete="new-password" id="password" placeholder="password" />
+            <p><input class="buttons" type="submit" value="Create Account"></p>
+            <p id="message">Already registered? <a href="index.html">Login</a></p>
+            <p id="msg" class="warning"></p>
+          </form>
+        </div>
+      </div>
+    </main>
+  </center>
+</body>
+</html>
