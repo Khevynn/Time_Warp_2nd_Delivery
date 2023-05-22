@@ -147,13 +147,16 @@ async function claimArtifact(game) {
     let [artifacts] = await pool.query("select * from game_artifact where ga_gm_id = ?", [game.id]);
     for (let artifact of artifacts) {
         if (game.player.position == artifact.ga_current_position) {
-            await pool.query("update game_artifact set ga_current_owner = ? where ga_id = ?", [game.player.id, artifact.ga_id]);
-            await pool.query("update game_artifact set ga_current_position = null where ga_id = ?", [artifact.ga_id]);
-            successfull = true;
-        };
+            if(artifact.ga_drop_user == game.player.id && !game.player.touched_final){
+                msg = "You need to touch the final to take a dropped artifact";
+            }else{
+                await pool.query("update game_artifact set ga_current_owner = ? where ga_id = ?", [game.player.id, artifact.ga_id]);
+                await pool.query("update game_artifact set ga_current_position = null where ga_id = ?", [artifact.ga_id]);
+                successfull = true;
+            } 
+        }else msg = "There are no artifacts at this position!";
     }
         
-    if(!successfull) msg = "There are no artifacts at this position!";
     return { result: successfull, msg: msg };
 }
 
